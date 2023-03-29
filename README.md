@@ -1,2 +1,2 @@
-# PrepCourse-Henry
-Repositorio de prueba - Mod 2 Prep Course Henry
+Prueba de como crear un repositorio y clonarlo desde github al pc
+
