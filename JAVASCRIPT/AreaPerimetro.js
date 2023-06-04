@@ -1,18 +1,22 @@
 function AreaPerimetro() {
     var calculo= "area"; 
     var figura="Triangulo";
-    
+    var base; 
+
     if (calculo=="area") {
         
             switch (figura){
                 case "Triangulo":
-                    var base=2; //prompt("Ingrese la base:","");
+                    //process.stdin.on("data",function(data){
+                        base=3; //data
+                        //process.exit;
+                        //})
                     var altura=4; //prompt("Ingrese la altura:","");
                     return "El area del triangulo es:"+(base*altura)/2;
                     break
                 case "Cuadrado":
                     var lado=3; //prompt("Ingrese el lado:","")
-                    console.log("El area del cuadrado es:"+lado**2);
+                    return "El area del cuadrado es:"+lado**2;
                     break
                 case "Rectangulo":
                     var base=5; //prompt("Ingrese la base:","");
@@ -24,33 +28,31 @@ function AreaPerimetro() {
                 default:
                     console.log("La figura ingresada no es valida.")
             }
-        }
-    else if (calculo=="perimetro"){
+    } else if (calculo=="perimetro"){
 
-        switch (figura){
-                case "Triangulo":
-                    var a=2 //prompt("Ingrese a:","");
-                    var b=3 //prompt("Ingrese b:","");
-                    var c=4 // prompt("Ingrese c:","");
-                    console.log("El perimetro del triangulo es:"+(a+b+c));
-                    break
-                case "Cuadrado":
-                    var lado=6 //prompt("Ingrese el lado:","")
-                    console.log("El perimetro del cuadrado es:"+4*lado);
-                    break
-                case "Rectangulo":
-                    var base=7 //prompt("Ingrese la base:","");
-                    var altura=4 //prompt("Ingrese la altura:","");
-                    return "El perimetro del rectangulo es:"+2*(base+altura);
-                    break
-                case "Circulo":
+                    switch (figura){
+                        case "Triangulo":
+                            var a=2 //prompt("Ingrese a:","");
+                            var b=3 //prompt("Ingrese b:","");
+                            var c=4 // prompt("Ingrese c:","");
+                            console.log("El perimetro del triangulo es:"+(a+b+c));
+                            break
+                        case "Cuadrado":
+                            var lado=6 //prompt("Ingrese el lado:","")
+                            console.log("El perimetro del cuadrado es:"+4*lado);
+                            break
+                        case "Rectangulo":
+                            var base=7 //prompt("Ingrese la base:","");
+                            var altura=4 //prompt("Ingrese la altura:","");
+                            return "El perimetro del rectangulo es:"+2*(base+altura);
+                            break
+                        case "Circulo":
 
-                default:
-        }
-        
-    }
-
+                        default:
+                            console.log("La figura ingresada no es valida.")
+                       }
+    } else{console.log("El calculo ingresado no es valido.")}
 }
 
-//console.log(function AreaPerimetro())
+console.log(AreaPerimetro())
 
