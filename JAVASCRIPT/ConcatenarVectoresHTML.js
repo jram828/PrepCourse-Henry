@@ -36,7 +36,7 @@ const onDOMLoad = () => {
         else{
             nuevovector=Vec1.concat(Vec2);
             nuevovector.sort((a, b) => a - b )
-            alert(`El nuevo vector es: ${nuevovector}`);}
+            alert(`El nuevo vector es: ${nuevovector}`)}
         
         
         

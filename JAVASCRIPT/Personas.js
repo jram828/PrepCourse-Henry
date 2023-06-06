@@ -1,4 +1,3 @@
-function Personas(nombre,cedula,fechaNac,email,ciuRes,ciuOri,artista,canciones){
 
 class Persona {
     constructor (nombre,cedula,fechaNac,ciuRes,ciuOri,artista,canciones){
