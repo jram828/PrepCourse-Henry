@@ -1,59 +1,72 @@
-function AreaPerimetro(calculo,figura,baseT,alturaT,lado,base,altura,radio,a,c,) {
-     // const readline = require('node:readline');
-    // const { stdin: input, stdout: output } = require('node:process');
-    // const rl = readline.createInterface({ input, output });
-   
-    // rl.question('Ingrese el calculo a realizar:', (answer1) => {
-    //     var answer1
-    //                 calculo= answer1;
-                     
-    //                  rl.close();
-                     
-    //                  });
 
-    if (calculo=="area") {
+    const onDOMLoad = () => {
+// Pedimos al usuario que seleccione el calculo a realizar
+    calculo= prompt("Ingrese el calculo a realizar (Area, Perimetro):");
+
+// Pedimos al usuario que seleccione una figura
+    figura= prompt("Ingrese la figura (Triangulo, Rectangulo, Cuadrado, Circulo):");
+    
+    if (calculo=="Area") {
                             switch (figura){
-                            case "Triangulo":
-                                return "El area del triangulo es:"+(baseT*alturaT)/2; 
-                                
-                            case "Cuadrado":
-                                return "El area del cuadrado es:"+lado**2; 
-                                
-                            case "Rectangulo":
-                                return "El area del rectangulo es:"+base*altura;
-                           
-                            case "Circulo":
-                                return "El area del circulo es:"+3.1416*(radio**2);
-                                
-                            default:
-                                return "La figura ingresada no es valida."
-                        }
+                                case "Triangulo":
+                                    baseT=parseFloat(prompt("Ingrese la base:"));
+                                    alturaT=parseFloat(prompt("Ingrese la altura:"));
+                                    areaT=(baseT*alturaT)/2
+                                    alert(`El área del triángulo es: ${areaT.toFixed(2)}`);
+                                    break
+                                case "Cuadrado":
+                                    lado=parseFloat(prompt("Ingrese el lado:"));
+                                    areaC=lado**2
+                                    alert(`El área del cuadrado es: ${areaC.toFixed(2)}`);    
+                                    break
+                                case "Rectangulo":
+                                    base=parseFloat(prompt("Ingrese la base:"));
+                                    altura=parseFloat(prompt("Ingrese la altura:"));
+                                    area=(base*altura)
+                                    alert(`El área del rectangulo es: ${area.toFixed(2)}`);
+                                    break
+                                case "Circulo":
+                                    radio=parseFloat(prompt("Ingrese el radio:"));
+                                    areaCi=3.1416*(radio**2)
+                                    alert(`El área del circulo es: ${areaCi.toFixed(2)}`);     
+                                    break
+                                default:
+                                    alert("La figura ingresada no es valida.");
+                             }
                       
                         
-                    } else if (calculo=="perimetro"){
+    } else if (calculo=="Perimetro"){
                         switch (figura){
                             case "Triangulo":
-                                return "El perimetro del triangulo es:"+(a+baseT+c);
-                                
+                                baseT=parseFloat(prompt("Ingrese la base:"));
+                                alturaT=parseFloat(prompt("Ingrese la altura:"));
+                                perT = baseT + 2 * Math.sqrt(alturaT ** 2 + (baseT / 2) ** 2);
+                                alert(`El perimetro del triángulo es: ${perT.toFixed(2)}`);
+                                break
                             case "Cuadrado":
-                                return "El perimetro del cuadrado es:"+4*lado;
-                                
+                                lado=parseFloat(prompt("Ingrese el lado:"));
+                                perC=4*lado
+                                alert(`El perimetro del cuadrado es: ${perC.toFixed(2)}`);    
+                                break
                             case "Rectangulo":
-                                return "El perimetro del rectangulo es:"+2*(base+altura);
+                                base=parseFloat(prompt("Ingrese la base:"));
+                                altura=parseFloat(prompt("Ingrese la altura:"));
+                                per=2*(base+altura)
+                                alert(`El perimetro del rectangulo es: ${per.toFixed(2)}`);
                                 break
                             case "Circulo":
-                                return "El perimetro del circulo es:"+2*3.1416*(radio);
+                                radio=parseFloat(prompt("Ingrese el radio:"));
+                                perCi=2*3.1416*(radio)
+                                alert(`El perimetro del circulo es: ${perCi.toFixed(2)}`);     
+                                break
                             default:
-                                return "La figura ingresada no es valida."
-                           }
-                                
-                    } else{return "El calculo ingresado no es valido."}
-                     
-                     
-    
-}
+                                alert("La figura ingresada no es valida.");
+                    } 
+    } else {alert("El calculo ingresado no es valido.");}
+    }
+window.addEventListener('DOMContentLoaded', onDOMLoad);
 
-console.log(AreaPerimetro("area","Circulo",0,0,0,0,0,4,0,0,));
+//console.log(AreaPerimetro("area","Cuadrado",0,0,5,0,0,4,0,0,));
 
 
 
